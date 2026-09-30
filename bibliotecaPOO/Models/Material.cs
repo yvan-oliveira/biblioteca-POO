@@ -33,6 +33,9 @@ internal class Material
         {
             Console.WriteLine($"Autor: Não encontrado");
         }
-            Console.WriteLine($"Assuntos: {string.Join(", ", _assuntos)}");
+        
+        Console.WriteLine($"Assuntos: {string.Join(", ", _assuntos)}");
+
+        Console.WriteLine("\n---------------------------\n");
     }
 }
