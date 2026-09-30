@@ -22,4 +22,14 @@ internal class Material
         _autor = autor;
         _assuntos = new List<string>();
     }
+
+    public void mostrarInformacoes()
+    {
+        Console.WriteLine($"Titulo: {this._titulo}");
+        if (!string.IsNullOrWhiteSpace(_autor))
+        {
+            Console.WriteLine(_autor);
+        }
+        Console.WriteLine($"Assuntos {string.Join(", ", _assuntos)}");
+    }
 }
