@@ -8,4 +8,18 @@ namespace bibliotecaPOO.Models;
 
 internal class Material
 {
+    private string _titulo;
+    private string? _autor;
+    private List<string> _assuntos;
+
+    public string Titulo { get; set; }
+    public string Autor { get; set; }
+    public IReadOnlyList<string> Assuntos { get; set; }
+
+    public Material(string titulo, string? autor = null)
+    {
+        _titulo = titulo;
+        _autor = autor;
+        _assuntos = new List<string>();
+    }
 }
