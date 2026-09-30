@@ -16,11 +16,11 @@ internal class Material
     public string Autor { get; set; }
     public IReadOnlyList<string> Assuntos { get; set; }
 
-    public Material(string titulo, string? autor = null)
+    public Material(string titulo, List<string> assuntos, string? autor = null)
     {
         _titulo = titulo;
         _autor = autor;
-        _assuntos = new List<string>();
+        _assuntos = assuntos;
     }
 
     public void mostrarInformacoes()
@@ -28,8 +28,11 @@ internal class Material
         Console.WriteLine($"Titulo: {this._titulo}");
         if (!string.IsNullOrWhiteSpace(_autor))
         {
-            Console.WriteLine(_autor);
+            Console.WriteLine($"Autor: {this._autor}");
+        } else
+        {
+            Console.WriteLine($"Autor: Não encontrado");
         }
-        Console.WriteLine($"Assuntos {string.Join(", ", _assuntos)}");
+            Console.WriteLine($"Assuntos: {string.Join(", ", _assuntos)}");
     }
 }
