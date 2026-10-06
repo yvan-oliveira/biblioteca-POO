@@ -26,10 +26,12 @@ internal class Material
     public void mostrarInformacoes()
     {
         Console.WriteLine($"Titulo: {this._titulo}");
+
         if (!string.IsNullOrWhiteSpace(_autor))
         {
             Console.WriteLine($"Autor: {this._autor}");
-        } else
+        } 
+        else
         {
             Console.WriteLine($"Autor: Não encontrado");
         }

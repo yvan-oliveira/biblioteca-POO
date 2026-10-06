@@ -6,6 +6,17 @@ using System.Threading.Tasks;
 
 namespace bibliotecaPOO.Models;
 
-internal class Midia
+internal class Midia : Material
 {
+    private string _tempoMidia;
+    private string _anoProducao;
+
+    public string TempoMidia;
+    public string AnoProducao;
+
+    public Midia(string titulo, List<string> assuntos, string tempoMidia, string anoProducao, string? autor = null) : base(titulo, assuntos, autor)
+    {
+        _tempoMidia = tempoMidia;
+        _anoProducao = anoProducao;
+    }
 }

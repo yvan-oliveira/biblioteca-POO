@@ -16,7 +16,7 @@ internal class Livro : Material
 
     public Livro(string titulo, List<string> assuntos, string isbn, int quantidadePaginas, string? autor = null) : base(titulo, assuntos, autor)
     {
-        this._isbn = Isbn;
+        this._isbn = isbn;
         this._quantidadePaginas = quantidadePaginas;
     }
 }
