@@ -8,13 +8,13 @@ namespace bibliotecaPOO.Models;
 
 internal class Material
 {
-    private string _titulo;
-    private string? _autor;
-    private List<string> _assuntos;
+    protected string _titulo;
+    protected string? _autor;
+    protected List<string> _assuntos;
 
-    public string Titulo { get; set; }
-    public string Autor { get; set; }
-    public IReadOnlyList<string> Assuntos { get; set; }
+    public string Titulo { get => this._titulo; set => this._titulo = value; }
+    public string Autor { get => this._autor ?? "Não informado" ; set => this._autor = value; }
+    public List<string> Assuntos { get => this._assuntos; set => this._assuntos = value; }
 
     public Material(string titulo, List<string> assuntos, string? autor = null)
     {
@@ -23,21 +23,21 @@ internal class Material
         _assuntos = assuntos;
     }
 
-    public void mostrarInformacoes()
+    public virtual void mostrarInformacoes()
     {
+        Console.WriteLine("\n---------------------------");
+
         Console.WriteLine($"Titulo: {this._titulo}");
 
-        if (!string.IsNullOrWhiteSpace(_autor))
+        Console.WriteLine($"Autor: {this._autor}");
+        /*if (!string.IsNullOrWhiteSpace(_autor))
         {
-            Console.WriteLine($"Autor: {this._autor}");
-        } 
+        }
         else
         {
             Console.WriteLine($"Autor: Não encontrado");
-        }
+        }*/
         
         Console.WriteLine($"Assuntos: {string.Join(", ", _assuntos)}");
-
-        Console.WriteLine("\n---------------------------\n");
     }
 }

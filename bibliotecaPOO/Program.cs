@@ -12,7 +12,7 @@ internal class Program
             "Rita Lobo"
         );
 
-        livro1.mostrarInformacoes();
+        //livro1.mostrarInformacoes();
 
         Material livro2 = new Material
         (
@@ -21,7 +21,7 @@ internal class Program
             "George R. R. Martin"
         );
 
-        livro2.mostrarInformacoes();
+        //livro2.mostrarInformacoes();
 
         Material violaoBiblioteca = new Material
         (
@@ -29,6 +29,26 @@ internal class Program
             ["Música", "Instrumento", "Material Pedagógico"]
         );
 
-        violaoBiblioteca.mostrarInformacoes();
+        //violaoBiblioteca.mostrarInformacoes();
+
+        Livro livro3 = new Livro(
+            "Crônicas de Nárnia",
+            ["Fantasia", "Aventura"],
+            "9780064471190",
+            767/*,
+            "C. S. Lewis",*/
+        );
+
+        livro3.mostrarInformacoes();
+
+        Midia daniel = new Midia(
+            "ser vivo",
+            ["garoto", "de"],
+            "60",
+            "5",
+            "Daniel"
+        );
+
+        daniel.mostrarInformacoes();
     }
 }

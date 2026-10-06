@@ -19,4 +19,13 @@ internal class Midia : Material
         _tempoMidia = tempoMidia;
         _anoProducao = anoProducao;
     }
+
+    public override void mostrarInformacoes()
+    {
+        base.mostrarInformacoes();
+        Console.WriteLine(this._titulo);
+        Console.WriteLine($"Duração: {this._tempoMidia}");
+        Console.WriteLine($"Ano de produção: {this._anoProducao}");
+        Console.WriteLine("---------------------------");
+    }
 }
