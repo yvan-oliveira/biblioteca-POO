@@ -6,13 +6,13 @@ using System.Threading.Tasks;
 
 namespace bibliotecaPOO.Models;
 
-internal class Material
+internal abstract class Material
 {
     protected string _titulo;
     protected string? _autor;
     protected List<string> _assuntos;
 
-    public string Titulo { get => this._titulo; set => this._titulo = value; }
+    public string Titulo { get { return this._titulo.ToUpper(); } set { this._autor = value; } }
     public string Autor { get => this._autor ?? "Não informado" ; set => this._autor = value; }
     public List<string> Assuntos { get => this._assuntos; set => this._assuntos = value; }
 
@@ -23,7 +23,7 @@ internal class Material
         _assuntos = assuntos;
     }
 
-    public virtual void mostrarInformacoes()
+    public virtual void MostrarInformacoes()
     {
         Console.WriteLine("\n---------------------------");
 
@@ -39,5 +39,20 @@ internal class Material
         }*/
         
         Console.WriteLine($"Assuntos: {string.Join(", ", _assuntos)}");
+    }
+
+    /*public decimal CalcularMulta(int DiasAtraso)
+    {
+        return;
+    }*/
+
+    public void MarcarEmprestado()
+    {
+
+    }
+
+    public void MarcarDisponivel()
+    {
+
     }
 }

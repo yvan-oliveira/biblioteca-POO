@@ -6,27 +6,23 @@ internal class Program
 {
     static void Main(string[] args)
     {
-        Material livro1 = new Material(
+        Livro livro1 = new Livro(
             "Receitas de bolo",
             ["Receitas", "Doces", "Culinária", "Rango", "Boia", "Rala Bucho"],
-            "Rita Lobo"
+            "9780064471190",
+            100,
+            "Cleiton"
         );
 
         //livro1.mostrarInformacoes();
 
-        Material livro2 = new Material
+        Livro livro2 = new Livro
         (
             "As crônicas de Gelo e Fogo",
             ["Fantasia", "Aventura", "Guerra"],
+            "9780064471190",
+            300,
             "George R. R. Martin"
-        );
-
-        //livro2.mostrarInformacoes();
-
-        Material violaoBiblioteca = new Material
-        (
-            "Violão Clássico",
-            ["Música", "Instrumento", "Material Pedagógico"]
         );
 
         //violaoBiblioteca.mostrarInformacoes();
@@ -39,7 +35,7 @@ internal class Program
             "C. S. Lewis",*/
         );
 
-        livro3.mostrarInformacoes();
+        livro3.MostrarInformacoes();
 
         Midia daniel = new Midia(
             "ser vivo",
@@ -49,6 +45,10 @@ internal class Program
             "Daniel"
         );
 
-        daniel.mostrarInformacoes();
+        daniel.MostrarInformacoes();
+
+        Console.WriteLine(livro3.QuantidadePaginas);
+        livro3.Titulo = "seila";
+        Console.WriteLine(livro3.Titulo);
     }
 }

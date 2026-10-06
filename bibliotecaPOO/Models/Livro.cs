@@ -20,9 +20,9 @@ internal class Livro : Material
         this._quantidadePaginas = quantidadePaginas;
     }
 
-    public override void mostrarInformacoes()
+    public override void MostrarInformacoes()
     {
-        base.mostrarInformacoes();
+        base.MostrarInformacoes();
         Console.WriteLine($"Titulo: {this._titulo}");
         Console.WriteLine($"Isbn: {this._isbn}");
         Console.WriteLine($"Quantidade de Paginas: {this._quantidadePaginas}");
