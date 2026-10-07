@@ -16,12 +16,8 @@ internal class Livro : Material
         set
         {
             if (value <= 0)
-            {
-                throw new ArgumentOutOfRangeException(
-                    nameof(value),
-                    "A quantidade de páginas deve ser maior que zero."
-                );
-            }
+                throw new ArgumentOutOfRangeException(nameof(value), "A quantidade de páginas deve ser maior que zero.");
+
             this.__quantidadePaginas = value;
         }
     }
