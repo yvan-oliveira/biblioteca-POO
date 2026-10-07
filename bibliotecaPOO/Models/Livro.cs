@@ -8,24 +8,38 @@ namespace bibliotecaPOO.Models;
 
 internal class Livro : Material
 {
-    private string _isbn;
-    private int _quantidadePaginas;
+    private string __isbn;
+    private int __quantidadePaginas;
 
-    public int QuantidadePaginas { get => this._quantidadePaginas; set => this._quantidadePaginas = value; }
-    public string Isbn { get => this._isbn; set => this._isbn = value; }
+    public int QuantidadePaginas {
+        get => this.__quantidadePaginas;
+        set
+        {
+            if (value <= 0)
+            {
+                throw new ArgumentOutOfRangeException();
+            }
+            else
+            {
+                this.__quantidadePaginas = value;
+            };
+        }
+    }
+        
+    public string Isbn { get => this.__isbn; set => this.__isbn = value; }
 
     public Livro(string titulo, List<string> assuntos, string isbn, int quantidadePaginas, string? autor = null) : base(titulo, assuntos, autor)
     {
-        this._isbn = isbn;
-        this._quantidadePaginas = quantidadePaginas;
+        this.__isbn = isbn;
+        this.__quantidadePaginas = quantidadePaginas;
     }
 
     public override void MostrarInformacoes()
     {
         base.MostrarInformacoes();
         Console.WriteLine($"Titulo: {this._titulo}");
-        Console.WriteLine($"Isbn: {this._isbn}");
-        Console.WriteLine($"Quantidade de Paginas: {this._quantidadePaginas}");
+        Console.WriteLine($"Isbn: {this.__isbn}");
+        Console.WriteLine($"Quantidade de Paginas: {this.__quantidadePaginas}");
         Console.WriteLine("---------------------------");
     }
 }

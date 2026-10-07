@@ -19,7 +19,6 @@ internal class Biblioteca
 
     }
 
-
     public void Emprestar(string nomeuUsuario, string nomeMaterial)
     {
 
@@ -35,8 +34,8 @@ internal class Biblioteca
 
     }
 
-    public string GerarRelatorio()
+    /*public string GerarRelatorio()
     {
         return;
-    }
+    }*/
 }
