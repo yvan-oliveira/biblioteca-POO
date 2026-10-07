@@ -17,20 +17,30 @@ internal class Livro : Material
         {
             if (value <= 0)
             {
-                throw new ArgumentOutOfRangeException();
+                throw new ArgumentOutOfRangeException(
+                    nameof(value),
+                    "A quantidade de páginas deve ser maior que zero."
+                );
             }
-            else
-            {
-                this.__quantidadePaginas = value;
-            };
+            this.__quantidadePaginas = value;
         }
     }
         
-    public string Isbn { get => this.__isbn; set => this.__isbn = value; }
+    public string Isbn
+    {
+        get => this.__isbn;
+        set
+        {
+            if (string.IsNullOrWhiteSpace(value))
+                throw new ArgumentException("O ISBN é obrigatório");
+
+                this.__isbn = value;
+        }
+    }
 
     public Livro(string titulo, List<string> assuntos, string isbn, int quantidadePaginas, string? autor = null) : base(titulo, assuntos, autor)
     {
-        this.__isbn = isbn;
+        this.Isbn = isbn;
         this.__quantidadePaginas = quantidadePaginas;
     }
 

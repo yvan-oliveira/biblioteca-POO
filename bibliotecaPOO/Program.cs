@@ -30,7 +30,7 @@ internal class Program
         Livro livro3 = new Livro(
             "Crônicas de Nárnia",
             ["Fantasia", "Aventura"],
-            "9780064471190",
+            "",
             767/*,
             "C. S. Lewis",*/
         );
